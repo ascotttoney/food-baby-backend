@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2019_06_17_160706) do
 
   create_table "recipe_ingredients", force: :cascade do |t|
     t.bigint "recipe_id"
-    t.bigint "ingredients_id"
+    t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredients_id"], name: "index_recipe_ingredients_on_ingredients_id"
+    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
     t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
   end
 
@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 2019_06_17_160706) do
     t.string "cuisine"
     t.string "budget"
     t.string "hungriness"
-    t.string "ingredients"
-    t.string "reviews"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,13 +62,11 @@ ActiveRecord::Schema.define(version: 2019_06_17_160706) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "photo"
-    t.string "saved_recipes"
-    t.string "reviewed_recipes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "recipe_ingredients", "ingredients", column: "ingredients_id"
+  add_foreign_key "recipe_ingredients", "ingredients"
   add_foreign_key "recipe_ingredients", "recipes"
   add_foreign_key "reviews", "recipes"
   add_foreign_key "reviews", "users"

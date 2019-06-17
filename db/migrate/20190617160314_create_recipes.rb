@@ -11,8 +11,6 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.string :cuisine
       t.string :budget
       t.string :hungriness
-      t.string :ingredients
-      t.string :reviews
       t.string :photo
 
       t.timestamps
