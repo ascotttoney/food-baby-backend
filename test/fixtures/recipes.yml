@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  author: MyString
+  yield: MyString
+  servings: MyString
+  instructions: MyString
+  description: MyString
+  category: MyString
+  cuisine: MyString
+  budget: MyString
+  hungriness: MyString
+  ingredients: MyString
+  reviews: MyString
+  photo: MyString
+
+two:
+  name: MyString
+  author: MyString
+  yield: MyString
+  servings: MyString
+  instructions: MyString
+  description: MyString
+  category: MyString
+  cuisine: MyString
+  budget: MyString
+  hungriness: MyString
+  ingredients: MyString
+  reviews: MyString
+  photo: MyString
