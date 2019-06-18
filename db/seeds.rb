@@ -1,8 +1,8 @@
-Recipe.destroy_all
-User.destroy_all
-Review.destroy_all
-Ingredient.destroy_all
-RecipeIngredient.destroy_all
+# Recipe.destroy_all
+# User.destroy_all
+# Review.destroy_all
+# Ingredient.destroy_all
+# RecipeIngredient.destroy_all
 
 paula = User.find_or_create_by(name: 'Paula')
 scott = User.find_or_create_by(name: 'Scott')
@@ -69,7 +69,3 @@ choc_cookies.reviews << Review.find_or_create_by(title: "That's a Spicy Cookie!"
 choc_cookies.reviews << Review.find_or_create_by(title: "A moment on the lips, a lifetime on the hips", user: paula)
 choc_cookies.reviews << Review.find_or_create_by(title: "These were good, but I hate that you have to wait a whole 24 hours for the dough to rest", user: tez)
 choc_cookies.reviews << Review.find_or_create_by(title: "Amazing! 10/10", user: hanaa)
-<<<<<<< HEAD
-# User.find_by(id: 2).photo = 'https://i.imgur.com/yHts9Xe.jpg?1'
-=======
->>>>>>> scott1
