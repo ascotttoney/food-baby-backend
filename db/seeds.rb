@@ -17,8 +17,6 @@ will = User.find_or_create_by(name: 'Will')
 deka = User.find_or_create_by(name: 'Deka')
 preston = User.find_or_create_by(name: 'Preston')
 
-
-
 salt = Ingredient.find_or_create_by(name: 'Salt')
 spaghetti_noodles = Ingredient.find_or_create_by(name: 'Spaghetti Noodles')
 tomato_sauce = Ingredient.find_or_create_by(name: 'Tomato Sauce')
@@ -48,7 +46,6 @@ choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient
 choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: eggs)
 choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: vanilla)
 choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: baking_powder)
-
 
 spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: parmigiano_reggiano)
 spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: tomato_sauce)
