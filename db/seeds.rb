@@ -65,13 +65,53 @@ spaghetti.hungriness = '5/5'
 spaghetti.photo = 'https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg'
 spaghetti.save
 
-spaghetti.reviews << Review.find_or_create_by(title: "This Aint Your Mama's Sketti!", user: paula)
-spaghetti.reviews << Review.find_or_create_by(title: "That's a Spicy Meatball!", user: scott)
+spaghetti.reviews << Review.find_or_create_by(
+  title: "This Aint Your Mama's Sketti!",
+  user: paula,
+  description: 'I usually just used ketchup on my sketti but I think I like this better. You may want to add some extra butter and oil.',
+  photo: 'http://1.images.southparkstudios.com/images/shows/south-park/clip-thumbnails/season-16/1609/south-park-s16e09c05-sketti-and-butter-16x9.jpg',
+  rating: '5/5'
+)
 
-choc_cookies.reviews << Review.find_or_create_by(title: "That's a Spicy Cookie!", user: scott)
-choc_cookies.reviews << Review.find_or_create_by(title: "A moment on the lips, a lifetime on the hips", user: paula)
-choc_cookies.reviews << Review.find_or_create_by(title: "These were good, but I hate that you have to wait a whole 24 hours for the dough to rest", user: tez)
-choc_cookies.reviews << Review.find_or_create_by(title: "Amazing! 10/10", user: hanaa)
+spaghetti.reviews << Review.find_or_create_by(
+  title: "That's a Spicy Meatball!",
+  user: scott,
+  description: 'I added a bit too much red pepper flakes and I had a horrible evening.',
+  photo: 'https://s3-media1.fl.yelpcdn.com/bphoto/Uubit7sJ6gw1csDWCZsefg/o.jpg',
+  rating: '3/5'
+)
+
+choc_cookies.reviews << Review.find_or_create_by(
+  title: "That's a Spicy Cookie!",
+  user: scott,
+  description: 'Sometimes you just want some cookies. Other times you want a lot of cookies.',
+  photo: 'https://foulmouthedbaker.files.wordpress.com/2013/07/watermarkedbrokenhome.png',
+  rating: '4/5'
+)
+
+choc_cookies.reviews << Review.find_or_create_by(
+  title: "A moment on the lips, a lifetime on the hips",
+  user: paula,
+  description: "I tried to make these cookies but failed miserably. Kinda like my first marriage. These cookies were like my ex. Wonderful to think about, hard as hell to deal with! I ended up following Tami Dunn's advice and went to Wal-Mart and got some cookies. Happy! ",
+  photo: 'https://i.redd.it/03qdpbxgm0x11.jpg',
+  rating: '1/5'
+)
+
+choc_cookies.reviews << Review.find_or_create_by(
+  title: "These were good, but I hate that you have to wait a whole 24 hours for the dough to rest",
+  user: tez,
+  description: 'Once upon a time I ate a cookie. It was a good cookie. It made me happy. Then I died.',
+  photo: 'https://i2.wp.com/www.livewellbakeoften.com/wp-content/uploads/2018/08/MM-Chocolate-Chip-Cookies-6.jpg',
+  rating: '2/5'
+)
+
+choc_cookies.reviews << Review.find_or_create_by(
+  title: "Amazing! 10/10",
+  user: hanaa,
+  description: "COOKIE COOKIE COOKIE ME WANT COOKIE!",
+  photo: 'https://mondrian.mashable.com/uploads%252Fstory%252Fthumbnail%252F91003%252Fe4e0cea3-ece7-46cc-a74c-fe01f88960ba.jpg%252F950x534.jpg',
+  rating: '5/5'
+)
 
 choc_cookies.author = 'Martha Stewart'
 choc_cookies.description = 'Ooey, gooey, soft and chewey!'
@@ -108,7 +148,14 @@ fresno_chiles = Ingredient.find_or_create_by(name: 'Fresno Chiles')
 pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: tomato_sauce)
 pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: mozzarella)
 pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: olive_oil)
-pizza.reviews << Review.find_or_create_by(title: "Mama Mia, what a pie!", user: scott)
+pizza.reviews << Review.find_or_create_by(
+  title: "Mama Mia, what a pie!",
+  user: scott,
+  description: 'Back when I was a young girl growing up in southern Italy, my mama made the best pizza. I remember when PizzaHut came to town. It was a dark day for mama. She walked into the river, cleansed herself in the cool water, let it wash over her. She came back and burned PizzaHut to the ground. Tomorrow is her parol hearing. Pray for mama.',
+  photo: 'https://i.imgur.com/gP7IwOm.jpg',
+  rating: '2/5'
+)
+
 pizza.save
 
 party_steak = Recipe.find_or_create_by(
@@ -131,5 +178,11 @@ party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient:
 party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: scallions)
 party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: fresno_chiles)
 
-party_steak.reviews << Review.find_or_create_by(title: 'Mmm, steak! I love to grill and I love to party.', user: paula)
+party_steak.reviews << Review.find_or_create_by(
+  title: 'Mmm, steak!',
+  user: paula,
+  description: 'I love to grill and I love to party. This dish allows me do both. My only recommendation is to be careful about what type of oil you use. 5w30 motor oil is not a good substitute! Great for my Prius, not so great for this steak. Otherwise, perfect!',
+  photo: 'https://img1.cookinglight.timeinc.net/sites/default/files/styles/medium_2x/public/1553530885/skirt-steak-with-chimichurri-1903.jpg',
+  rating: '4/5'
+)
 party_steak.save
