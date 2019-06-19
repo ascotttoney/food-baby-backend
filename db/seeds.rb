@@ -1,3 +1,5 @@
+# - - - - - USERS - - - - - #
+
 paula = User.find_or_create_by(name: 'Paula')
 scott = User.find_or_create_by(name: 'Scott')
 dhara = User.find_or_create_by(name: 'Dhara')
@@ -17,41 +19,37 @@ will = User.find_or_create_by(name: 'Will')
 deka = User.find_or_create_by(name: 'Deka')
 preston = User.find_or_create_by(name: 'Preston')
 
-salt = Ingredient.find_or_create_by(name: 'Salt')
-spaghetti_noodles = Ingredient.find_or_create_by(name: 'Spaghetti Noodles')
-tomato_sauce = Ingredient.find_or_create_by(name: 'Tomato Sauce')
-garlic = Ingredient.find_or_create_by(name: 'Garlic')
-onion = Ingredient.find_or_create_by(name: 'Onion')
+
+# - - - - - INGREDIENTS - - - - - #
+
+baking_powder = Ingredient.find_or_create_by(name: 'Baking Powder')
+baking_soda = Ingredient.find_or_create_by(name: 'Baking Soda')
 basil = Ingredient.find_or_create_by(name: 'Basil')
+brown_sugar = Ingredient.find_or_create_by(name: 'Dark Brown Sugar')
+butter = Ingredient.find_or_create_by(name: 'Butter')
+choc_chips = Ingredient.find_or_create_by(name: 'Chocolate Chips')
+eggs = Ingredient.find_or_create_by(name: 'Eggs')
+flour = Ingredient.find_or_create_by(name: 'Flour')
+fresno_chiles = Ingredient.find_or_create_by(name: 'Fresno Chiles')
+garlic = Ingredient.find_or_create_by(name: 'Garlic')
+mozzarella = Ingredient.find_or_create_by(name: 'Mozzarella')
+olive_oil = Ingredient.find_or_create_by(name: 'Olive Oil')
+onion = Ingredient.find_or_create_by(name: 'Onion')
 parmigiano_reggiano = Ingredient.find_or_create_by(name: 'Parmigiano Reggiano')
 pepper = Ingredient.find_or_create_by(name: 'Pepper')
-flour = Ingredient.find_or_create_by(name: 'Flour')
-baking_soda = Ingredient.find_or_create_by(name: 'Baking Soda')
-choc_chips = Ingredient.find_or_create_by(name: 'Chocolate Chips')
-butter = Ingredient.find_or_create_by(name: 'Butter')
+red_wine_vinegar = Ingredient.find_or_create_by(name: 'Red Wine Vinegar')
+salt = Ingredient.find_or_create_by(name: 'Salt')
+scallions = Ingredient.find_or_create_by(name: 'Scallions')
+skirt_steak = Ingredient.find_or_create_by(name: 'Skirt Steak')
+spaghetti_noodles = Ingredient.find_or_create_by(name: 'Spaghetti Noodles')
 sugar = Ingredient.find_or_create_by(name: 'Granulated White Sugar')
-brown_sugar = Ingredient.find_or_create_by(name: 'Dark Brown Sugar')
-eggs = Ingredient.find_or_create_by(name: 'Eggs')
+tomato_sauce = Ingredient.find_or_create_by(name: 'Tomato Sauce')
 vanilla = Ingredient.find_or_create_by(name: 'Vanilla')
-baking_powder = Ingredient.find_or_create_by(name: 'Baking Powder')
+
+
+# - - - - - SPAGHETTI - - - - - #
 
 spaghetti = Recipe.find_or_create_by(name: 'Spaghetti')
-choc_cookies = Recipe.find_or_create_by(name: 'Chocolate Chip Cookies')
-
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: flour)
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: baking_soda)
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: choc_chips)
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: butter)
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: brown_sugar)
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: eggs)
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: vanilla)
-choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: baking_powder)
-
-spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: parmigiano_reggiano)
-spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: tomato_sauce)
-spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: parmigiano_reggiano)
-spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: parmigiano_reggiano)
-spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: parmigiano_reggiano)
 
 spaghetti.author = 'Guy Fieri'
 spaghetti.yield = '5'
@@ -63,7 +61,12 @@ spaghetti.cuisine = 'Italian'
 spaghetti.budget = '$'
 spaghetti.hungriness = '5/5'
 spaghetti.photo = 'https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg'
-spaghetti.save
+
+spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: parmigiano_reggiano.id, recipe_id: spaghetti.id)
+spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: tomato_sauce.id, recipe_id: spaghetti.id)
+spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: spaghetti_noodles.id, recipe_id: spaghetti.id)
+spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: garlic.id, recipe_id: spaghetti.id)
+spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: onion.id, recipe_id: spaghetti.id)
 
 spaghetti.reviews << Review.find_or_create_by(
   title: "This Aint Your Mama's Sketti!",
@@ -71,8 +74,8 @@ spaghetti.reviews << Review.find_or_create_by(
   description: 'I usually just used ketchup on my sketti but I think I like this better. You may want to add some extra butter and oil.',
   photo: 'http://1.images.southparkstudios.com/images/shows/south-park/clip-thumbnails/season-16/1609/south-park-s16e09c05-sketti-and-butter-16x9.jpg',
   rating: '5/5'
-)
-
+  )
+  
 spaghetti.reviews << Review.find_or_create_by(
   title: "That's a Spicy Meatball!",
   user: scott,
@@ -80,6 +83,33 @@ spaghetti.reviews << Review.find_or_create_by(
   photo: 'https://s3-media1.fl.yelpcdn.com/bphoto/Uubit7sJ6gw1csDWCZsefg/o.jpg',
   rating: '3/5'
 )
+    
+spaghetti.save
+
+
+# - - - - - CHOCOLATE CHIP COOKIES - - - - - #
+
+choc_cookies = Recipe.find_or_create_by(name: 'Chocolate Chip Cookies')
+
+choc_cookies.author = 'Martha Stewart'
+choc_cookies.description = 'Ooey, gooey, soft and chewey!'
+choc_cookies.instructions = 'Combine, mix, bake, let rest.'
+choc_cookies.servings = '4'
+choc_cookies.category = 'Dessert'
+choc_cookies.cuisine = 'Sweets'
+choc_cookies.yield = '20 cookies'
+choc_cookies.budget = '$'
+choc_cookies.hungriness = '1/5'
+choc_cookies.photo = 'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg'
+
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: flour.id, recipe_id: choc_cookies.id)
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: baking_soda.id, recipe_id: choc_cookies.id)
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: choc_chips.id, recipe_id: choc_cookies.id)
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: butter.id, recipe_id: choc_cookies.id)
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: brown_sugar.id, recipe_id: choc_cookies.id)
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: eggs.id, recipe_id: choc_cookies.id)
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: vanilla.id, recipe_id: choc_cookies.id)
+choc_cookies.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: baking_powder.id, recipe_id: choc_cookies.id)
 
 choc_cookies.reviews << Review.find_or_create_by(
   title: "That's a Spicy Cookie!",
@@ -113,17 +143,9 @@ choc_cookies.reviews << Review.find_or_create_by(
   rating: '5/5'
 )
 
-choc_cookies.author = 'Martha Stewart'
-choc_cookies.description = 'Ooey, gooey, soft and chewey!'
-choc_cookies.instructions = 'Combine, mix, bake, let rest.'
-choc_cookies.servings = '4'
-choc_cookies.category = 'Dessert'
-choc_cookies.cuisine = 'Sweets'
-choc_cookies.yield = '20 cookies'
-choc_cookies.budget = '$'
-choc_cookies.hungriness = '1/5'
-choc_cookies.photo = 'https://images-gmi-pmc.edge-generalmills.com/087d17eb-500e-4b26-abd1-4f9ffa96a2c6.jpg'
 choc_cookies.save
+
+# - - - - - PIZZA - - - - - #
 
 pizza = Recipe.find_or_create_by(
   name: 'Pizza',
@@ -138,16 +160,10 @@ pizza = Recipe.find_or_create_by(
   hungriness: '4/5',
   photo: 'http://www.chefdecuisine.com/recettes/admin/uploads/M_recipe_2296.jpg')
 
-mozzarella = Ingredient.find_or_create_by(name: 'Mozzarella')
-red_wine_vinegar = Ingredient.find_or_create_by(name: 'Red Wine Vinegar')
-skirt_steak = Ingredient.find_or_create_by(name: 'Skirt Steak')
-olive_oil = Ingredient.find_or_create_by(name: 'Olive Oil')
-scallions = Ingredient.find_or_create_by(name: 'Scallions')
-fresno_chiles = Ingredient.find_or_create_by(name: 'Fresno Chiles')
+pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: tomato_sauce.id, recipe_id: pizza.id)
+pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: mozzarella.id, recipe_id: pizza.id)
+pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: olive_oil.id, recipe_id: pizza.id)
 
-pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: tomato_sauce)
-pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: mozzarella)
-pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: olive_oil)
 pizza.reviews << Review.find_or_create_by(
   title: "Mama Mia, what a pie!",
   user: scott,
@@ -157,6 +173,9 @@ pizza.reviews << Review.find_or_create_by(
 )
 
 pizza.save
+
+
+# - - - - - PARTY STEAK - - - - - #
 
 party_steak = Recipe.find_or_create_by(
   name: 'Party Steak with Grilled Scallion Salsa Verde',
@@ -171,12 +190,12 @@ party_steak = Recipe.find_or_create_by(
   cuisine: 'Tex/Mex'
 )
 
-party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: red_wine_vinegar)
-party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: skirt_steak)
-party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: olive_oil)
-party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: salt)
-party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: scallions)
-party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient: fresno_chiles)
+party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: red_wine_vinegar.id, recipe_id: party_steak.id)
+party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: skirt_steak.id, recipe_id: party_steak.id)
+party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: olive_oil.id, recipe_id: party_steak.id)
+party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: salt.id, recipe_id: party_steak.id)
+party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: scallions.id, recipe_id: party_steak.id)
+party_steak.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: fresno_chiles.id, recipe_id: party_steak.id)
 
 party_steak.reviews << Review.find_or_create_by(
   title: 'Mmm, steak!',
@@ -185,4 +204,5 @@ party_steak.reviews << Review.find_or_create_by(
   photo: 'https://img1.cookinglight.timeinc.net/sites/default/files/styles/medium_2x/public/1553530885/skirt-steak-with-chimichurri-1903.jpg',
   rating: '4/5'
 )
+
 party_steak.save
