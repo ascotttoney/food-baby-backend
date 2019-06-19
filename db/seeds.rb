@@ -27,24 +27,36 @@ baking_soda = Ingredient.find_or_create_by(name: 'Baking Soda')
 basil = Ingredient.find_or_create_by(name: 'Basil')
 brown_sugar = Ingredient.find_or_create_by(name: 'Dark Brown Sugar')
 butter = Ingredient.find_or_create_by(name: 'Butter')
+buttermilk = Ingredient.find_or_create_by(name: 'Buttermilk')
 choc_chips = Ingredient.find_or_create_by(name: 'Chocolate Chips')
+coriander = Ingredient.find_or_create_by(name: 'Coriander')
+cornstarch = Ingredient.find_or_create_by(name: 'Cornstarch')
+cucumber = Ingredient.find_or_create_by(name: 'Cucumber')
 eggs = Ingredient.find_or_create_by(name: 'Eggs')
+fennel_seeds = Ingredient.find_or_create_by(name: 'Fennel Seeds')
+feta = Ingredient.find_or_create_by(name: 'Feta Cheese')
 flour = Ingredient.find_or_create_by(name: 'Flour')
 fresno_chiles = Ingredient.find_or_create_by(name: 'Fresno Chiles')
 garlic = Ingredient.find_or_create_by(name: 'Garlic')
+ginger = Ingredient.find_or_create_by(name: 'Ginger')
 mozzarella = Ingredient.find_or_create_by(name: 'Mozzarella')
 olive_oil = Ingredient.find_or_create_by(name: 'Olive Oil')
 onion = Ingredient.find_or_create_by(name: 'Onion')
 parmigiano_reggiano = Ingredient.find_or_create_by(name: 'Parmigiano Reggiano')
 pepper = Ingredient.find_or_create_by(name: 'Pepper')
+red_pepper_flakes = Ingredient.find_or_create_by(name: 'Red Pepper Flakes')
 red_wine_vinegar = Ingredient.find_or_create_by(name: 'Red Wine Vinegar')
+salmon = Ingredient.find_or_create_by(name: 'Salmon')
 salt = Ingredient.find_or_create_by(name: 'Salt')
 scallions = Ingredient.find_or_create_by(name: 'Scallions')
 skirt_steak = Ingredient.find_or_create_by(name: 'Skirt Steak')
+smoked_paprika = Ingredient.find_or_create_by(name: 'Smoked Paprika')
 spaghetti_noodles = Ingredient.find_or_create_by(name: 'Spaghetti Noodles')
+strawberries = Ingredient.find_or_create_by(name: 'Strawberries')
 sugar = Ingredient.find_or_create_by(name: 'Granulated White Sugar')
 tomato_sauce = Ingredient.find_or_create_by(name: 'Tomato Sauce')
 vanilla = Ingredient.find_or_create_by(name: 'Vanilla')
+water = Ingredient.find_or_create_by(name: 'Water')
 
 
 # - - - - - SPAGHETTI - - - - - #
@@ -167,7 +179,7 @@ pizza.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: ol
 pizza.reviews << Review.find_or_create_by(
   title: "Mama Mia, what a pie!",
   user: scott,
-  description: 'Back when I was a young girl growing up in southern Italy, my mama made the best pizza. I remember when PizzaHut came to town. It was a dark day for mama. She walked into the river, cleansed herself in the cool water, let it wash over her. She came back and burned PizzaHut to the ground. Tomorrow is her parol hearing. Pray for mama.',
+  description: 'Back when I was a young girl growing up in southern Italy, my mama made the best pizza. I remember when Pizza-Hut came to town. It was a dark day for mama. She walked into the river, cleansed herself in the cool water, let it wash over her. She came back and burned Pizza-Hut to the ground. Tomorrow is her parol hearing. Pray for mama.',
   photo: 'https://i.imgur.com/gP7IwOm.jpg',
   rating: '2/5'
 )
@@ -206,3 +218,109 @@ party_steak.reviews << Review.find_or_create_by(
 )
 
 party_steak.save
+
+
+# - - - - - SPICY SLOW-ROASTED SALMON - - - - - #
+
+slow_roasted_salmon = Recipe.find_or_create_by(
+  name: 'Spicy Slow-Roasted Salmon With Cucumbers and Feta',
+  author: 'Ali Slagle',
+  yield: '4 to 6 servings',
+  servings: '',
+  instructions: "Heat the oven to 300 degrees. In an ovenproof skillet large enough to hold the salmon, combine olive oil, red-pepper flakes, paprika, fennel seeds, coriander seeds and a pinch each of salt and pepper. Cook over low heat, stirring occasionally, until fragrant and just simmering, about 5 minutes.\n Pat the salmon dry, then sprinkle with salt and place in the spiced oil flesh side up. Spoon some of the oil over the salmon, then bake, basting occasionally, until cooked through, 15 to 25 minutes. (You will know if the salmon is done when the fish flakes when cut into with a knife or fork or when an instant-read thermometer inserted into the thickest part reaches 120 degrees.) \n\n While the salmon roasts, peel the cucumber and cut into bite-size pieces. Sprinkle with salt. /n Break the salmon into large pieces on a serving platter. (Alternatively, you can make the salmon in advance, and eat it at room temperature.) Scatter the cucumbers around the salmon, then top with feta and parsley. Drizzle chile oil over everything to taste. (You will have more than you need — dip bread into any remaining oil.)",
+  description: "Roasting salmon low and slow in a shallow pool of olive oil guarantees that it won't overcook — and that it'll soak up whatever other flavors are swimming in the oil. Dried chile, fennel and coriander provide a crunchy bite and sneaky heat to the buttery salmon. Serve it warm or at room temperature, with cucumbers, drizzles of more spicy oil, and feta, for a little more plushness. Store any leftover salmon for up to 2 days in the oil, so it doesn’t dry out.",
+  photo: 'https://static01.nyt.com/images/2018/11/27/dining/as-chile-roasted-salmon/as-chile-roasted-salmon-articleLarge-v2.jpg',
+  budget: '$$',
+  hungriness: '3/5',
+  cuisine: 'Seafood'
+)
+
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: olive_oil.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: red_pepper_flakes.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: smoked_paprika.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: coriander.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: salt.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: pepper.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: salmon.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: cucumber.id, recipe_id: slow_roasted_salmon.id)
+slow_roasted_salmon.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: feta.id, recipe_id: slow_roasted_salmon.id)
+
+slow_roasted_salmon.reviews << Review.find_or_create_by(
+  title: "Good, but needs a little something something.",
+  user: will,
+  description: "Salmon was perfectly cooked and the oil was delicious. We put the fish and cucumbers over a bed of baby kale for a full meal. The only thing missing was acid- this really needed some lime juice to bring it alive.",
+  photo: 'https://static01.nyt.com/images/2018/10/23/dining/ar-slow-roasted-salmon/ar-slow-roasted-salmon-articleLarge.jpg',
+  rating: '3/5'
+)
+
+slow_roasted_salmon.reviews << Review.find_or_create_by(
+  title: "Kinda like how I already make it.",
+  user: dhara,
+  description: "I make a very similar dish, actually 2-3 variations with touches of Indian spices, esp. using onion seeds in one such dish. Paprika, red chili peppers, cilantro garnish are a must. The flavor of salmon and the spices, and the aroma of the dish are mind blowing! Nothing such can be found in any restaurant.",
+  photo: 'https://www.onceuponachef.com/images/2018/12/Slow-Roasted-Salmon-760x950.jpg',
+  rating: '3/5'
+)
+
+slow_roasted_salmon.reviews << Review.find_or_create_by(
+  title: "Add more red pepper to spice up your life!",
+  user: tun,
+  description: "This looked so delicious! But I was underwhelmed by the flavors. You could taste the coriander and a bit of the red pepper flakes, but the only saving grace was a squeeze of lemon when served. Seemed like a waste of good oil although if I do this again, I would infuse the oil, then let sit out to blend and intensify the flavors before using. Could be tasty on all sorts of dishes.",
+  photo: 'http://www.strawberryplum.com/wp-content/uploads/2014/03/Slow-Roasted-Salmon-with-Escarole-1024x682.jpg',
+  rating: '4/5'
+)
+
+slow_roasted_salmon.save
+
+
+# - - - - - STRAWBERRY SLAB PIE - - - - - #
+
+slab_pie = Recipe.find_or_create_by(
+  name: 'Strawberry Slab Pie',
+  author: 'Nicole Taylor',
+  yield: '1 pie',
+  servings: '12 to 16',
+  instructions: "On Juneteenth, which celebrates the abolition of slavery in the United States, the picnic table overflows with summertime pies and red foods, a symbol of perseverance. That makes this festive strawberry slab pie ideal for Juneteenth, though it'd be welcome anytime in berry season. The rectangular pie is made in a quarter sheet pan; if you don't have one, use a comparably sized casserole dish. Cracked black pepper in the crust and fresh ginger in the filling add a bit of spice. This isn't an especially sugary dessert, so if you want something sweeter, top it with vanilla ice cream.",
+  description: "Make the crust: In a large mixing bowl, combine flour, 2 teaspoons granulated sugar, the salt and the pepper. Using a pastry blender, cut butter into flour until the largest pieces of butter are the size of lentils. \n\n Sprinkle ice water over dough a tablespoon at a time, stirring and scooping the dough with your hands as you go to incorporate the water, until the dough just begins to adhere and you can gather it into an imperfect ball. (You may not need all the water.) Transfer dough to a piece of plastic wrap and press into a disk. Wrap tightly and place in the fridge for 30 minutes. \n\n Lightly butter a quarter sheet pan with a 1-inch rim, including the top edge of the rim, and set aside. (Quarter sheet pans are usually 8 by 11 inches or 9 by 12 inches, depending on the manufacturer.) \n\n Lightly flour a large work surface, a rolling pin and the dough. Roll the chilled dough into an 1/8-inch-thick rectangle. From that, cut a rectangle three inches bigger than the dimensions of your pan on each side (i.e., an 11-by-14-inch rectangle for an 8-by-11-inch pan, or a 12-by-15-inch rectangle for a 9-by-12-inch pan). Reserve the extra dough. \n\n Gently press the dough rectangle into the quarter sheet pan, trimming excess dough at the edges. The dough should go all the way up and over the top edge of the pan, if possible. Transfer pan to refrigerator and chill for 1 hour. \n\n Meanwhile, line another baking sheet with parchment paper. Roll out reserved dough to 1/4- to 1/8-inch thickness. Using 1- and 2-inch biscuit cutters, cut out about 30 circles of different sizes (or use all one size if you prefer), rerolling dough as necessary. Transfer circles to parchment-lined baking sheet and refrigerate. \n\n Make the filling: Combine all ingredients in a large bowl and stir well. Set aside for about an hour, while crust chills. \n\n Heat oven to 375 degrees. When oven is hot, paint some of the buttermilk on the edges of the pie crust. Transfer berry mixture to crust, patting the berries down into a roughly even layer. Place pan on a larger baking sheet to catch any drips. Bake for 30 minutes. \n Paint buttermilk over reserved pastry circles and sprinkle with remaining tablespoon granulated sugar. Place circles all over the bubbling berries. Continue baking pie until crust is golden brown and filling is bubbling, an additional 50 to 60 minutes. \n\n Run a small knife around the edge of the pie while it's warm. Transfer the pie in its quarter sheet pan to a wire rack. Let cool for at least 2 hours before cutting and serving from the pan.",
+  photo: 'https://static01.nyt.com/images/2017/06/14/dining/14JUNETEENTH4/14JUNETEENTH4-articleLarge-v2.jpg',
+  budget: '$',
+  hungriness: '1/5',
+  cuisine: 'Dessert'
+)
+
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: flour.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: sugar.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: salt.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: pepper.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: butter.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: water.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: buttermilk.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: strawberries.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: brown_sugar.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: cornstarch.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: brown_sugar.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: vanilla.id, recipe_id: slab_pie.id)
+slab_pie.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: ginger.id, recipe_id: slab_pie.id)
+
+slab_pie.reviews << Review.find_or_create_by(
+  title: "Good but I kicked it up a notch!",
+  user: paula,
+  description: "Quite a delicious recipe! My only advice: I would aim high on the brown sugar. 4-5 tablespoons, instead of the 3-4 recommended. I doubled the amount of ginger, which was lovely. I added 4 tablespoons of Eddie's Grapefruit Vodka to the strawberry filing. It added just the right flavor and edge to it.",
+  photo: 'https://cdn.drawception.com/images/panels/2017/3-19/LWen3xMOyx-12.png',
+  rating: '4/5'
+)
+
+slab_pie.reviews << Review.find_or_create_by(
+  title: "MOAR BUTTAR!",
+  user: hanaa,
+  description: "Lightly butter a quarter sheet pan with a 1-inch rim, including the top edge of the rim, and set aside. (Quarter sheet pans are usually 8 by 11 inches or 9 by 12 inches, depending on the manufacturer.)",
+  photo: 'https://images-gmi-pmc.edge-generalmills.com/d4a96f92-ff51-4005-9ed6-cd5692c818db.jpg',
+  rating: '3/5'
+)
+
+slab_pie.reviews << Review.find_or_create_by(
+  title: "Not sweet enough for my sweet tooth!",
+  user: tiffani,
+  description: "Although I was glad to see this billed as not oversweet, I'd call that an understatement. It either needs more sweetener, or needs to be served with ice cream or sweetened whipped cream.",
+  photo: 'https://thetiptoefairy.com/wp-content/uploads/2019/04/strawberry-slab-pie-10.jpg',
+  rating: '5/5'
+)
