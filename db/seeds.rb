@@ -82,12 +82,13 @@ spaghetti.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id
 
 spaghetti.reviews << Review.find_or_create_by(
   title: "This Aint Your Mama's Sketti!",
-  user: paula,
+  user_id: paula.id,
+  recipe_id: spaghetti.id,
   description: 'I usually just used ketchup on my sketti but I think I like this better. You may want to add some extra butter and oil.',
   photo: 'http://1.images.southparkstudios.com/images/shows/south-park/clip-thumbnails/season-16/1609/south-park-s16e09c05-sketti-and-butter-16x9.jpg',
   rating: '5/5'
   )
-  
+
 spaghetti.reviews << Review.find_or_create_by(
   title: "That's a Spicy Meatball!",
   user: scott,
@@ -95,7 +96,7 @@ spaghetti.reviews << Review.find_or_create_by(
   photo: 'https://s3-media1.fl.yelpcdn.com/bphoto/Uubit7sJ6gw1csDWCZsefg/o.jpg',
   rating: '3/5'
 )
-    
+
 spaghetti.save
 
 
@@ -218,7 +219,6 @@ party_steak.reviews << Review.find_or_create_by(
 )
 
 party_steak.save
-
 
 # - - - - - SPICY SLOW-ROASTED SALMON - - - - - #
 
