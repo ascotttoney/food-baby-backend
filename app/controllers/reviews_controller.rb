@@ -14,6 +14,18 @@ class ReviewsController < ApplicationController
     render json: ReviewSerializer.new(review)
   end
 
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
+    render json: review
+  end
+
+  def update
+    review = Review.find(params[:id])
+    review.update(review_params)
+    render json: review
+  end
+
 
   private
 
