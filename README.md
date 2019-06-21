@@ -1,24 +1,13 @@
-# README
+# FOOD, BABY!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Food, Baby! Look through a vast collection of recipes to find one that catches your eye.
 
-Things you may want to cover:
+Once you sign in, you can:
+* view all recipes
+* view reviews for recipes
+* add reviews
+* edit your own reviews
+* delete your own reviews
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy!
