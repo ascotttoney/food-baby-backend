@@ -22,6 +22,7 @@ preston = User.find_or_create_by(name: 'Preston')
 
 # - - - - - INGREDIENTS - - - - - #
 
+bacon = Ingredient.find_or_create_by(name: 'Bacon')
 baking_powder = Ingredient.find_or_create_by(name: 'Baking Powder')
 baking_soda = Ingredient.find_or_create_by(name: 'Baking Soda')
 basil = Ingredient.find_or_create_by(name: 'Basil')
@@ -36,27 +37,41 @@ eggs = Ingredient.find_or_create_by(name: 'Eggs')
 fennel_seeds = Ingredient.find_or_create_by(name: 'Fennel Seeds')
 feta = Ingredient.find_or_create_by(name: 'Feta Cheese')
 flour = Ingredient.find_or_create_by(name: 'Flour')
+focaccia = Ingredient.find_or_create_by(name: 'Focaccia Bread')
 fresno_chiles = Ingredient.find_or_create_by(name: 'Fresno Chiles')
 garlic = Ingredient.find_or_create_by(name: 'Garlic')
 ginger = Ingredient.find_or_create_by(name: 'Ginger')
+green_beans = Ingredient.find_or_create_by(name: 'Green Beans')
+hmustard = Ingredient.find_or_create_by(name: 'Horseradish Mustard')
+ketchup = Ingredient.find_or_create_by(name: 'Ketchup')
+jelly = Ingredient.find_or_create_by(name: 'Jelly')
 mozzarella = Ingredient.find_or_create_by(name: 'Mozzarella')
 olive_oil = Ingredient.find_or_create_by(name: 'Olive Oil')
 onion = Ingredient.find_or_create_by(name: 'Onion')
 parmigiano_reggiano = Ingredient.find_or_create_by(name: 'Parmigiano Reggiano')
+peanutbutter = Ingredient.find_or_create_by(name: 'Peanut Butter')
 pepper = Ingredient.find_or_create_by(name: 'Pepper')
 red_pepper_flakes = Ingredient.find_or_create_by(name: 'Red Pepper Flakes')
 red_wine_vinegar = Ingredient.find_or_create_by(name: 'Red Wine Vinegar')
+ricotta = Ingredient.find_or_create_by(name: 'Ricotta Cheese')
+rye = Ingredient.find_or_create_by(name: 'Rye')
 salmon = Ingredient.find_or_create_by(name: 'Salmon')
 salt = Ingredient.find_or_create_by(name: 'Salt')
+sauerkraut = Ingredient.find_or_create_by(name: 'Sauerkraut')
 scallions = Ingredient.find_or_create_by(name: 'Scallions')
+seitan = Ingredient.find_or_create_by(name: 'Seitan')
 skirt_steak = Ingredient.find_or_create_by(name: 'Skirt Steak')
 smoked_paprika = Ingredient.find_or_create_by(name: 'Smoked Paprika')
 spaghetti_noodles = Ingredient.find_or_create_by(name: 'Spaghetti Noodles')
+spring_onion = Ingredient.find_or_create_by(name: 'Spring Onion')
 strawberries = Ingredient.find_or_create_by(name: 'Strawberries')
 sugar = Ingredient.find_or_create_by(name: 'Granulated White Sugar')
 tomato_sauce = Ingredient.find_or_create_by(name: 'Tomato Sauce')
 vanilla = Ingredient.find_or_create_by(name: 'Vanilla')
+vmayo = Ingredient.find_or_create_by(name: 'Vegan Mayo')
 water = Ingredient.find_or_create_by(name: 'Water')
+wsauce = Ingredient.find_or_create_by(name: 'Vegan Worcestershire sauce')
+whitebread = Ingredient.find_or_create_by(name: 'White Bread')
 
 
 # - - - - - SPAGHETTI - - - - - #
@@ -337,3 +352,301 @@ slab_pie.reviews << Review.find_or_create_by(
   photo: 'https://thetiptoefairy.com/wp-content/uploads/2019/04/strawberry-slab-pie-10.jpg',
   rating: '5'
 )
+
+
+# - - - - - VEGAN REUBEN - - - - - #
+
+vreuben = Recipe.find_or_create_by(name: 'Vegan Reuben')
+
+vreuben.author = 'Alissa'
+vreuben.yield = '1 sandwich'
+vreuben.servings = '1'
+vreuben.instructions = "Whisk together all if the dressing ingredients in a small bowl and set it aside.
+
+In a separate small bowl, stir together the soy sauce, Worcestershire sauce, maple syrup, ginger, allspice, black pepper and cloves. This is your sauce for seasoning the seitan. Set it aside.
+
+Coat the bottom of a medium skillet with the oil and place it over medium-high heat.
+
+Give the oil a minute to heat up. Once it begins to shimmer, add the onion.
+
+Sauté the onion for about 4 minutes, until it softens up and begins to brown.
+
+Add the garlic and sauté it for about 1 minute, until it becomes very fragrant.
+
+Add the seitan to the skillet and sauté everything for about 5 minutes more, until the seitan begins to crisp up in spots.
+
+Carefully pour the soy sauce mixture over the seitan and flip a few times to mix the ingredients.
+
+Cook the mixture for 1 to 2 minutes more, until most of the liquid has dried up.
+
+Remove the seitan from the skillet and transfer it to a plate.
+
+Wipe out the skillet or grab a clean one and set it over medium heat.
+
+Butter one side of each bread slice, then place three slices (or fewer and cook the sandwiches in batches if there isn't enough room), in the skillet, butter side down.
+
+Layer the seitan, sauerkraut, dressing, pickles and cheese, if using, over the bread slices, then top with the remaining slices, butter side up.
+
+Cook the sandwiches for about 4 minutes on each side, until golden and crispy.
+
+Transfer the sandwiches to plates and serve."
+
+vreuben.description = "The classic Reuben sandwich goes vegan! Made with layers of hearty seitan, tangy sauerkraut and creamy vegan Russian dressing, these sandwiches are packed with flavor and grilled to crispy delicious perfection."
+vreuben.category = 'Lunch'
+vreuben.cuisine = 'From Nebraska'
+vreuben.budget = '$$'
+vreuben.hungriness = '5'
+vreuben.photo = 'https://www.connoisseurusveg.com/wp-content/uploads/2014/05/vegan-reuben-sandwich-14-of-15.jpg'
+
+vreuben.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: vmayo.id, recipe_id: vreuben.id)
+vreuben.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: ketchup.id, recipe_id: vreuben.id)
+vreuben.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: seitan.id, recipe_id: vreuben.id)
+vreuben.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: hmustard.id, recipe_id: vreuben.id)
+vreuben.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: wsauce.id, recipe_id: vreuben.id)
+vreuben.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: rye.id, recipe_id: vreuben.id)
+vreuben.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: sauerkraut.id, recipe_id: vreuben.id)
+
+vreuben.reviews << Review.find_or_create_by(
+  title: "Kind of messy",
+  user_id: hanaa.id,
+  recipe_id: vreuben.id,
+  description: "Love the idea of a vegan reuben but this was a huge mess. Next time, I'll probably just opt for something simple like a PB&J",
+  photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv6J9J3jJKkmfLpLAAjg7_qxJW-zDwRnLPHpcDue_ANhonqlEdnA",
+  rating: "3"
+  )
+
+vreuben.reviews << Review.find_or_create_by(
+  title: "I'm not vegan and I still love this sandwich",
+  user_id: andrew.id,
+  recipe_id: vreuben.id,
+  description: "I was not expecting to like a vegan reuben. I really didn't think there was a subsitute for corned beef, and there's not. But I was really pleasantly surprised by how much I enjoyed this version. Would recommend!",
+  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi-SANQ8q-UX8aAP18Odc2tXGp6q-KFXOG21W--Eilb9USuZjA',
+  rating: '4'
+)
+
+vreuben.save
+
+
+
+# - - - - - GREEN BEANS - - - - - #
+
+beans = Recipe.find_or_create_by(name: 'Green Beans with Bacon')
+
+beans.author = 'Holly Nilsson'
+beans.yield = '1 pot of beans'
+beans.servings = '4-6'
+beans.instructions = "Place chopped bacon into a frying pan and cook until crispy
+Remove bacon and set aside on a plate lined with paper towel
+Discard all but 1 tablespooon (approx.. this doesn’t have to be exact) of bacon drippings
+
+Turn heat to medium. Add Green Beans to pan and cook until they are lightly browned, stirring occasionally (about 8 minutes).
+
+Add garlic, bacon and squeeze the lemon wedge over the beans. Toss and cook for 1 minute more."
+
+beans.description = "Tender crisp green beans with smoky bacon make the perfect side dish!"
+beans.category = 'Side Dish'
+beans.cuisine = 'Lean'
+beans.budget = '$'
+beans.hungriness = '2'
+beans.photo = 'https://www.spendwithpennies.com/wp-content/uploads/2013/04/Green-Beans-with-Bacon-22.jpg'
+
+beans.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: garlic.id, recipe_id: beans.id)
+beans.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: green_beans.id, recipe_id: beans.id)
+beans.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: salt.id, recipe_id: beans.id)
+beans.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: bacon.id, recipe_id: beans.id)
+beans.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: olive_oil.id, recipe_id: beans.id)
+
+
+beans.reviews << Review.find_or_create_by(
+  title: "Takes something nutritious and ruins it",
+  user_id: han.id,
+  recipe_id: beans.id,
+  description: "I hate bacon idk why I made this.",
+  photo: "http://www.theriotrocks.org/blog/wp-content/uploads/2017/05/56506091.jpg",
+  rating: "1"
+  )
+
+beans.reviews << Review.find_or_create_by(
+  title: "Bacon is good for me",
+  user_id: evan.id,
+  recipe_id: beans.id,
+  description: 'You can eat to live or you can eat to live. Throw some bacon on it, my g.',
+  photo: 'https://dinnerthendessert.com/wp-content/uploads/2018/10/Green-Beans-with-Bacon.jpg',
+  rating: '4'
+)
+
+beans.save
+
+
+# - - - - - SOFT SCRAMBLE - - - - - #
+
+sscramble = Recipe.find_or_create_by(name: 'Soft Scramble Sandwich')
+
+sscramble.author = 'Molly Baz'
+sscramble.yield = '1 sandwich'
+sscramble.servings = '1'
+sscramble.instructions = "Place a rack in center of oven; preheat to 350°. Trim woody ends of spring onions. Separate white bulbs from green parts with a knife. Cut bulbs in half through the root end; if size varies wildly, cut larger bulbs into quarters. Cut tender green parts of stalks into 3' pieces; set aside separately from bulbs.
+
+Heat 2 Tbsp. butter in a 10 nonstick skillet over medium until foaming. Add onion bulbs and toss to coat in butter; season with salt and pepper. Cook, stirring often, until deeply golden brown and starting to soften, 4–5 minutes. Add vinegar, onion stalks, and ½ cup water and continue to cook, stirring occasionally, until almost all liquid is cooked off and bulbs are very soft and jammy, 6–8 minutes longer. Transfer to a plate. Wipe out skillet.
+
+While onions cook, mix ricotta and Parmesan in a small bowl; season with salt and pepper. Finely grate lemon zest and garlic into ricotta mixture and stir to combine.
+
+Warm focaccia in oven (place directly on rack) until soft and warmed through but not browned, 2–3 minutes. Divide between plates. Spread ricotta mixture in swooshing dollops on top of focaccia.
+
+Melt remaining 1 Tbsp. butter in skillet over medium-low heat. Add eggs; season with salt. Cook, stirring frequently in large sweeping figure-eight motions with a spatula, until eggs have set into creamy folds, 1–2 minutes.
+
+Divide scrambled eggs between focaccia. Top with onion mixture."
+sscramble.description = "To get the most flavor out of this open-faced breakfast sandwich, look for spring onions with round bulbs and very tender dark green stalks. If you can find only thicker-stalked spring onions, cut the stalks in half lengthwise, then into 3' pieces. Cook the stalks along with the bulbs; they’ll benefit from the extra time."
+sscramble.category = 'Breakfast'
+sscramble.cuisine = 'New American'
+sscramble.budget = '$$'
+sscramble.hungriness = '3'
+sscramble.photo = 'https://assets.bonappetit.com/photos/5d02b066993d1a40831bb4ac/master/w_640%2Cc_limit/Eggy-Ricotta-Sandwich-tight-ingredient.jpg'
+
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: butter.id, recipe_id: sscramble.id)
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: eggs.id, recipe_id: sscramble.id)
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: focaccia.id, recipe_id: sscramble.id)
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: salt.id, recipe_id: sscramble.id)
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: spring_onion.id, recipe_id: sscramble.id)
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: ricotta.id, recipe_id: sscramble.id)
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: garlic.id, recipe_id: sscramble.id)
+sscramble.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: parmigiano_reggiano.id, recipe_id: sscramble.id)
+
+
+sscramble.reviews << Review.find_or_create_by(
+  title: "Hoity Toity",
+  user_id: tun.id,
+  recipe_id: sscramble.id,
+  description: "This recipe is good, but why mess with a classic egg sandwich with two sides? Open face is for people who have time to eat breakfast with a fork and knife. Be more accessible, BA",
+  photo: "https://www.countrycleaver.com/wp-content/uploads/2018/03/Bacon-Egg-and-Arugula-Breakfast-Sandwich-on-Focaccia-Bread-2.jpg",
+  rating: "2"
+  )
+
+sscramble.reviews << Review.find_or_create_by(
+  title: "Insert egg pun here",
+  user_id: rose.id,
+  recipe_id: sscramble.id,
+  description: 'Pretty good! Eggselent, even.',
+  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjAUno7xyP-UUeVR55n1YEnWTKJBB_bwUpiNbPvz1bKCEQtw2y',
+  rating: '4'
+)
+
+sscramble.reviews << Review.find_or_create_by(
+  title: "Molly Baz is my favorite",
+  user_id: rose.id,
+  recipe_id: sscramble.id,
+  description: "I made this because I am obsessed with Molly Baz. One time, I saw her eating out at a restaurant and I almost fainted. Molly, if you're reading this, I love you.",
+  photo: 'https://cdn.shopify.com/s/files/1/0066/9312/6202/articles/MollyBaz_GreatOnes_LizClayman_019_1200x1200.jpg?v=1559582339',
+  rating: '5'
+)
+
+sscramble.save
+
+
+
+# - - - - - BIRTHDAY CAKE - - - - - #
+
+bcake = Recipe.find_or_create_by(name: 'Birthday Cake')
+
+bcake.author = 'King Arthur'
+bcake.yield = '1 cake'
+bcake.servings = '8-10'
+bcake.instructions = "1. To make the cake: Preheat the oven to 325°F with a rack in the center. Lightly grease two 8” x 2” or 9” x 2” round cake pans; for extra protection against sticking, line the bottom of the pans with parchment rounds (you can cut these yourself or use precut 8” or 9” rounds), and grease the parchment. If your 8” pans aren’t at least 2” deep, use 9” pans.
+2. Weigh your flour; you’ll find its weight by toggling to “grams” at the top of the ingredient section above. Or measure it by gently spooning it into a cup, then sweeping off any excess.
+3. In a small bowl, combine the flour, salt, and baking powder. Set aside.
+4. In a large mixing bowl, either using an electric hand mixer or a stand mixer with whisk attachment, beat the eggs, sugar, vanilla, and almond extract, if using, until thickened and light gold in color, about 2 minutes at medium-high speed. If your stand mixer doesn’t have a whisk attachment, beat for 5 minutes using the paddle attachment. The batter should fall in thick ribbons from the beaters, whisk, or paddle.
+5. Add the dry ingredients to the mixture in the bowl and mix — by hand or on low speed of a mixer — just enough to combine. Scrape the bottom and sides of the bowl, then mix again briefly, to fully incorporate any residual flour or sticky bits.
+6. In a saucepan set over medium heat or in the microwave, bring the milk just to a simmer. Remove the pan from the heat and add the butter and oil, stirring by hand until the butter has melted.
+7. Slowly mix the hot milk-butter-oil mixture into the batter, stirring on low speed of a mixer until everything is well combined. Scrape the bowl and mix briefly, just until smooth.
+8. Divide the batter evenly between the two pans. You’ll use about 2 3/4 cups (about 580g) in each.
+9. Bake the cakes until a toothpick inserted into the center comes out clean and the top feels set, 26 to 30 minutes for two 9” pans, or 38 to 42 minutes for two 8” pans; a digital thermometer inserted into the center of the cakes should read 205°F. Remove the cakes from the oven, carefully loosen the edges, and allow them to cool for 15 minutes in the pans. Then turn them out of the pans and transfer them to a rack, right-side up, to cool to room temperature.
+10. To make the frosting: In a large mixing bowl or the bowl of your stand mixer, stir together - by hand or mixer - the cocoa powder, 1 cup (113g) of the confectioners’ sugar, and the salt. Stir in the water and vanilla, scraping the bowl if necessary.
+11. Add the butter and remaining confectioners’ sugar, stirring to combine. Using an electric hand mixer or a stand mixer with paddle attachment, beat the frosting at medium-high speed for 1 to 2 minutes, until lightened in color and fluffy, stopping halfway through to scrape the bottom and sides of the bowl. When the frosting is ready, scoop out a bit on your spatula; does it seem nicely spreadable? If it's too stiff, beat in water (1 teaspoon at a time) until it's the consistency you want.
+12. To assemble the cake: Place one of the cake layers on a serving plate; tuck pieces of waxed or parchment paper underneath the edge of the cake to keep the plate clean. Spread the bottom layer with about 1 cup of frosting, enough to make a 1/4” to 1/2”-thick layer. Center the second layer bottom-side up (for a flat top) over the frosted layer and press gently to set it in place.
+13. If your schedule permits, place the cake in the refrigerator or freezer, uncovered, for at least 30 minutes (or up to 2 hours) to firm it up. This will make the layers less likely to slide around as you work, and the cake won’t shed crumbs as you frost. If you’re pressed for time, you can skip this step.
+14. To finish the cake: For the best-looking cake, do the frosting in two steps. First, spread a very thin layer of frosting around the sides and across the top; this is called a crumb coat. You should be able to see the cake through the frosting in spots, it’s that thin. Refrigerate the cake for 20 minutes to let this layer set. Again, skip this step if time is a factor.
+15. Once the cake is chilled, use the remaining frosting to coat it thoroughly and evenly; our cake styling guide offers six pro-style options for styling your cake. If you have any leftover frosting, you can use it to pipe decorations on the top and/or around the base.
+16. Store the cake, covered, at room temperature, or in the refrigerator if your kitchen is hot. Let it come to room temperature before serving."
+
+bcake.description = "Birthdays: A time for singing, balloons, and (of course) cake. Some of us have a dedicated favorite, but perhaps no cake is more universally topped with candles than the classic yellow cake with chocolate frosting.
+Despite its ubiquity in bakeries nationwide (and in mix form on grocery store shelves), great homemade versions of this chocolate-on-vanilla duo are somewhat elusive. But after months of testing, we think we've nailed it. This golden-hued, moist, tender vanilla cake with its layers of rich chocolate frosting is so good that we’ve declared it our 2019 Recipe of the Year. Join us in celebrating this classic American cake and the birthdays it commemorates."
+
+bcake.category = 'Dessert'
+bcake.cuisine = 'American'
+bcake.budget = '$$'
+bcake.hungriness = '2'
+bcake.photo = 'https://www.barbarabakes.com/wp-content/uploads/2019/03/Three-Layer-Yellow-Cake-With-Chocolate-Frosting-Barbara-Bakes-735x490.jpg'
+
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: butter.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: flour.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: water.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: vanilla.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: sugar.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: salt.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: eggs.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: baking_soda.id, recipe_id: bcake.id)
+bcake.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: baking_powder.id, recipe_id: bcake.id)
+
+
+bcake.reviews << Review.find_or_create_by(
+  title: "Perfection",
+  user_id: safae.id,
+  recipe_id: bcake.id,
+  description: "Made this for my best friend's birthday. She's gluten free, and eats this cake, so if that's not a testament to how good this recipe is, I don't know what is.",
+  photo: "https://whatscookingamerica.net/wp-content/uploads/2017/07/Chocolate-Cake-Completed-1-opt.jpg",
+  rating: "5"
+  )
+
+bcake.reviews << Review.find_or_create_by(
+  title: "Too sweet",
+  user_id: dhara.id,
+  recipe_id: bcake.id,
+  description: 'I like cake as much as the next guy, but this recipe was wayyyy too sweet. Cavities, much????',
+  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8HVrK5nemUkcVun4QXGjsLhqr_dc7KJZ0iru8hWDqgsFJdGzE',
+  rating: '1'
+)
+
+bcake.save
+
+
+
+# - - - - - PB&J - - - - - #
+
+pbj = Recipe.find_or_create_by(name: 'Peanut Butter & Jelly')
+
+pbj.author = 'Your Mom'
+pbj.yield = '1'
+pbj.servings = '1'
+pbj.instructions = 'Heat griddle or skillet to 350 degrees F (175 degrees C).
+Spread butter on one side of each slice of bread. Spread peanut butter on unbuttered side of one slice of bread, and jelly on the other. Place one slice, buttered side down on the griddle. Top with other slice, so that peanut butter and jelly are in the middle. Cook for 4 minutes on each side, or until golden brown, and heated through.'
+pbj.description = 'This is peanut butter and jelly with a twist. The kids will thank you for them.'
+pbj.category = 'Snicks and Snacks'
+pbj.cuisine = 'American'
+pbj.budget = '$'
+pbj.hungriness = '3'
+pbj.photo = 'https://www.thekitchenmagpie.com/wp-content/uploads/images/2014/08/peanutbutterandjamfrenchtoast12.jpg'
+
+pbj.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: peanutbutter.id, recipe_id: pbj.id)
+pbj.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: jelly.id, recipe_id: pbj.id)
+pbj.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: butter.id, recipe_id: pbj.id)
+pbj.recipe_ingredients << RecipeIngredient.find_or_create_by(ingredient_id: whitebread.id, recipe_id: pbj.id)
+
+pbj.reviews << Review.find_or_create_by(
+  title: "A PB&J, but make it fashion",
+  user_id: jae.id,
+  recipe_id: pbj.id,
+  description: "If you have an extra five minutes to devote to making a PB&J, it's worth it. A warm gooey mess of the peanut butter (I like JIF or Peter Pan) plus some strawberry jam come together beautifully, and the butter gives it that hint of salt/really brings out the umami undertones",
+  photo: "https://neighborfoodblog.com/wp-content/uploads/2013/01/grilled-pb-and-j.jpg",
+  rating: "5"
+  )
+
+pbj.reviews << Review.find_or_create_by(
+  title: "My kids loved this",
+  user_id: romy.id,
+  recipe_id: pbj.id,
+  description: 'My kids will only eat chicken fingers and gushers. But they loved this. Adding it to my toolbox!',
+  photo: 'http://i.imgur.com/Evhh9KV.jpg',
+  rating: '5'
+)
+
+pbj.save
